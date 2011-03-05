@@ -1,5 +1,7 @@
 # Documentation
 
+## See it in action: http://guyht.github.com/Giki/examples/wiki.html
+
 ## What is it?
 A simple to implement, easily extendible, **asynchronous** live parser for a variety of markup languages, for example, *wiki text, BB code, markdown, code blocks*.  As you type, the text is rendered on the page in real time.
 
