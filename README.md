@@ -1,6 +1,7 @@
 # Documentation
 
-## See it in action: http://guyht.github.com/Giki/examples/wiki.html
+## See it in action: 
+http://guyht.github.com/Giki/examples/wiki.html
 
 ## What is it?
 A simple to implement, easily extendible, **asynchronous** live parser for a variety of markup languages, for example, *wiki text, BB code, markdown, code blocks*.  As you type, the text is rendered on the page in real time.
@@ -24,7 +25,7 @@ Add a text area to your page to receive input, and a div to received the parsed 
 
 Then simply invoke the giki object
 
-    new giki({
+    new Giki({
      'div' : 'giki_div',
      'text_area' : 'giki_ta',
      'parser' : 'default.js'
