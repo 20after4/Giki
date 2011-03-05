@@ -25,7 +25,7 @@ Add a text area to your page to receive input, and a div to received the parsed 
 
 Then simply invoke the giki object
 
-    new giki({
+    new Giki({
      'div' : 'giki_div',
      'text_area' : 'giki_ta',
      'parser' : 'default.js'
