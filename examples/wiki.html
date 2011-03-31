@@ -1,3 +1,4 @@
+
 <!--
 /*
  * Giki - Dynamic JavaScript parsing library
@@ -43,8 +44,7 @@
 		<script type="text/javascript" src="../src/giki.js"></script>
 	 </head>
 	<body onload='init()'>
-    <a href="http://github.com/guyht/Giki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-    
+
 		<script type="text/javascript">
 			// Load Gikis
 			function init() {
@@ -71,14 +71,34 @@ This text is normal
 			<div id='bbc_div'></div>
 			<br />
 			<textarea id='bbc_textarea' cols='70' rows='10'>
-[b]Bold[/b]
-[i]Italic[/i]
-[url="http://www.cach.me/blog"]Url[/url]
-[quote]Block quote[/quote]
-[list][*]List item 1 
-[*]List item 2[/list]
-This text is normal
+Following BBCode expressions are recognized:
+
+[b]bold[/b]
+[i]italic[/i]
+[u]underlined[/u]
+[s]strike-through[/s]
+[samp]sample[/samp]
+
+[color=red]red[/color]
+[color=#FF0000]red[/color]
+[size=1.2]1.2em[/size]
+
+[url]http://blogs.stonesteps.ca/showpost.asp?pid=33[/url]
+[url=http://blogs.stonesteps.ca/showpost.asp?pid=33][b]BBCode[/b] Parser[/url]
+
+[q=http://blogs.stonesteps.ca/showpost.asp?pid=33]inline quote[/q]
+[q]inline quote[/q]
+[blockquote=http://blogs.stonesteps.ca/showpost.asp?pid=33]block quote[/blockquote]
+[blockquote]block quote[/blockquote]
+
+[pre]formatted 
+     text[/pre]
+[code]if(a == b) 
+   print("done");[/code]
+
+text containing [noparse] [brackets][/noparse]
 			</textarea>
 		</div>
 	</body>
 </html>
+
