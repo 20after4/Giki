@@ -4,6 +4,8 @@
   <meta charset='utf-8'>
   <link rel="stylesheet" type="text/css" href="css/giki-main.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/gworker.js"></script>
+  <script type="text/javascript" src="src/giki.js"></script>
   <script type="text/javascript" src="javascript/main.js"></script>
 
   <title>guyht/Giki @ GitHub</title>
@@ -15,21 +17,7 @@
       font-family: "Helvetica,Arial,FreeSans";
       color: #000000;
     }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #0e1025; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #0e1025; }
-    h3 { text-align: center; color: #0e1025; }
-    a { color: #0e1025; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
+
   </style>
 </head>
 
@@ -38,52 +26,70 @@
     <img src="http://i.imgur.com/lPvmK.png" />
 </div>
 
-<div id="giki-try-me"></div>
- <!-- <a href="http://github.com/guyht/Giki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="giki-main">
+    <div id="giki-content"></div>
+</div>
 
-  <div id="container">
+<div id="giki-try-me">
+    <div id="giki-try-me-top"></div>
+    <div id="giki-try-me-body">
+        <div id="giki-try-me-body-textarea">
+            <textarea id="giki-try-me-ta" cols="44" rows="10">
+[b]Welcome to GIKI[/b]
 
-    <div class="download">
-      <a href="http://github.com/guyht/Giki/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/guyht/Giki/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+[b]GIKI[/b] is a simple, real time, asynchronous parsing framework that suppors a wide variety of parsers.  Currently, BBCode and wiki text are supported, and it is very easy to customize and create new parsers.
+
+The performance of the parsers is outstanding as they make use of webworkers via the [url=https://github.com/guyht/GWorker]GWorker[/url] library.
+
+[color=#FDD017]This text is parsed in real time.  If you would like to try it out for yourself, simply click on the try me button on the right hand side of the page and make some edits.  The edits will appear in real time. [/color]
+
+[b]Installation[/b]
+
+Simply add the following to your HEAD tag:
+
+[code]    <script src="giki.js" type="text/javascript"></script>[/code]
+
+If you would like the script to be compatible with older browsers that do not support web workers, then also download and add the gworker.js script to yoru HEAD tag.  This is recommended.
+
+[code]    <script src="gworker.js" type="text/javascript"></script>[/code]
+
+NOTE: The gworker script must be included [i]before[/i] the giki script
+
+[b]Usage[/b]
+
+Add a text area to your page to receive input, and a div to received the parsed data and make sure they have unique ids.
+
+[code]    <div id="giki_div"></div>
+    <textarea id="giki_ta"></textarea>[/code]
+
+Then simply invoke the giki object
+
+[code]    new Giki({
+     'div' : 'giki_div',
+     'text_area' : 'giki_ta',
+     'parser' : 'bbcode.js'
+    });[/code]
+
+Et voila!
+
+[b]Adding new parsers[/b]
+
+Giki is designed with extensibility in mind.  Writing new parsers is very simple.  New parsers are written as web workers (they will also work in older browsers thanks to gworker) and therefore only need to implement the onmessage function, and use the postMessage function to return the parsed data.
+
+[code]    self.onmessage = function(event) {
+     var data = event.data;
+     // ......
+     // Do some parsing
+     // .......
+     self.postMessage(data);
+    };[/code]
+            </textarea>
+        </div>    
     </div>
+</div>
 
-    <h1><a href="http://github.com/guyht/Giki">Giki</a>
-      <span class="small">by <a href="http://github.com/guyht">guyht</a></span></h1>
+<a href="http://github.com/guyht/Giki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-    <div class="description">
-      Live, asynchronous parser for a almost any markup language (wiki text, BB code etc....)
-    </div>
-    
-    <h2><a href="examples/wiki.html">Click here for a live example</a></h2>
-
-    <h2>Authors</h2>
-<p>Guy Halford-Thompson (guyht@me.com)
-<br/>
-<br/>      </p>
-<h2>Contact</h2>
-<p>Guy Halford-Thompson (guy@cach.me)
-<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/guyht/Giki/zipball/master">zip</a> or
-      <a href="http://github.com/guyht/Giki/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/guyht/Giki</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/guyht/Giki">guyht/Giki</a>
-    </div>
-
-  </div>-->
 
   
 </body>

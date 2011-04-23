@@ -1,3 +1,5 @@
+
+
 #giki-header {
     position:absolute;
     top:0;
@@ -12,10 +14,45 @@
     margin-left:100px;
 }
 #giki-try-me {
-    background-image:url('http://i.imgur.com/6BGwe.png');
-    width: 535px;
+    width: 90px;
     height: 210px;
     position: absolute;
     top: 200px;
     right: 0px;
 }
+
+#giki-try-me-top {
+    background-image:url('http://i.imgur.com/WdqjI.png');
+    width: 100%;
+    height: 14px
+}
+
+#giki-try-me-body {
+    background-image:url('http://i.imgur.com/DzBvD.png');
+    width: 100%;
+    height: 196px;
+}
+
+#giki-try-me-body-textarea {
+    margin-left: 90px;
+}
+
+#giki-try-me-body-textarea textarea {
+    margin-top: 10px;
+}
+
+#giki-main {
+    width: 900px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    margin-top: 62px;
+    height: 1000px;
+    background-image:url('http://i.imgur.com/60T2f.png');
+}
+
+#giki-content {
+    padding: 100px;
+}
+    

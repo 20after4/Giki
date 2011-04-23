@@ -3,7 +3,16 @@
 $('document').ready(
     function() {
         // Onclicks
-        $('#giki-try-me').click(function() { slideToggle(this); });
+        $('#giki-try-me-top').click(function() { slideToggle(this.parentNode); });
+    
+    var giki = new Giki(
+        {
+            'div'       : 'giki-content',
+            'text_area' : 'giki-try-me-ta',
+            'parser'    : 'src/bbcode.js'
+        }
+    );
+    
     }
 );
         
@@ -15,7 +24,11 @@ $('document').ready(
         
 function slideToggle(obj)
 {
-    var width = $(obj).css('width') === '90px' ? 535 : 90;
+    var dir = $(obj).css('width') === '90px' ? true : false,
+        width = dir ? 535 : 90;
+    
+    // Hide textarea
+    obj.getElementsByTagName('textarea')[0].style.display = dir ? '' : 'none';
 
     $(obj).animate(
         {
