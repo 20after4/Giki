@@ -4,6 +4,8 @@ $('document').ready(
     function() {
         // Onclicks
         $('#giki-try-me-top').click(function() { slideToggle(this.parentNode); });
+        
+        $('#giki-try-me-ta').val($('#giki-content').html());
     
     var giki = new Giki(
         {

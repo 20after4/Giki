@@ -1,4 +1,23 @@
 
+body {
+    font-family : 'Georgia', serif;   
+    text-shadow: 0 -1px 1px #191919;
+    color: #EAF2D9;
+    background-color: #ECF2D9;
+}
+
+a {
+    color: #A33D29;
+    font-weight: bold;
+}
+
+pre {
+    padding: 20px;
+    background-color: #191919;
+    border-color: #F9F9B3;
+    border-width: 1px;
+    border-style: dashed;
+}
 
 #giki-header {
     position:absolute;
@@ -13,6 +32,13 @@
 #giki-header img {
     margin-left:100px;
 }
+
+#giki-header {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
 #giki-try-me {
     width: 90px;
     height: 210px;
@@ -30,7 +56,7 @@
 #giki-try-me-body {
     background-image:url('http://i.imgur.com/DzBvD.png');
     width: 100%;
-    height: 196px;
+    height: 197px;
 }
 
 #giki-try-me-body-textarea {
@@ -43,16 +69,17 @@
 
 #giki-main {
     width: 900px;
-    background-color: black;
+    background-color: #302D2C;
     margin-left: auto;
     margin-right: auto;
-    color: white;
     margin-top: 62px;
-    height: 1000px;
-    background-image:url('http://i.imgur.com/60T2f.png');
 }
 
 #giki-content {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     padding: 100px;
+    padding-top: 20px;
 }
     

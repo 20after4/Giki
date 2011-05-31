@@ -10,15 +10,6 @@
 
   <title>guyht/Giki @ GitHub</title>
 
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #f1efda;
-      font-family: "Helvetica,Arial,FreeSans";
-      color: #000000;
-    }
-
-  </style>
 </head>
 
 <body>
@@ -27,15 +18,9 @@
 </div>
 
 <div id="giki-main">
-    <div id="giki-content"></div>
-</div>
-
-<div id="giki-try-me">
-    <div id="giki-try-me-top"></div>
-    <div id="giki-try-me-body">
-        <div id="giki-try-me-body-textarea">
-            <textarea id="giki-try-me-ta" cols="44" rows="10">
-[b]Welcome to GIKI[/b]
+    <div id="giki-content">
+    
+    [b]Welcome to GIKI[/b]
 
 [b]GIKI[/b] is a simple, real time, asynchronous parsing framework that suppors a wide variety of parsers.  Currently, BBCode and wiki text are supported, and it is very easy to customize and create new parsers.
 
@@ -47,11 +32,11 @@ The performance of the parsers is outstanding as they make use of webworkers via
 
 Simply add the following to your HEAD tag:
 
-[code]    <script src="giki.js" type="text/javascript"></script>[/code]
+[code]&lt;script src="giki.js" type="text/javascript"></script>[/code]
 
 If you would like the script to be compatible with older browsers that do not support web workers, then also download and add the gworker.js script to yoru HEAD tag.  This is recommended.
 
-[code]    <script src="gworker.js" type="text/javascript"></script>[/code]
+[code]    &lt;script src="gworker.js" type="text/javascript"></script>[/code]
 
 NOTE: The gworker script must be included [i]before[/i] the giki script
 
@@ -59,8 +44,9 @@ NOTE: The gworker script must be included [i]before[/i] the giki script
 
 Add a text area to your page to receive input, and a div to received the parsed data and make sure they have unique ids.
 
-[code]    <div id="giki_div"></div>
-    <textarea id="giki_ta"></textarea>[/code]
+[code]    &lt;div id="giki_div">&lt;/div>
+    &lt;textarea id="giki_ta">&lt;/textarea>
+[/code]
 
 Then simply invoke the giki object
 
@@ -83,6 +69,16 @@ Giki is designed with extensibility in mind.  Writing new parsers is very simple
      // .......
      self.postMessage(data);
     };[/code]
+    
+    </div>
+</div>
+
+<div id="giki-try-me">
+    <div id="giki-try-me-top"></div>
+    <div id="giki-try-me-body">
+        <div id="giki-try-me-body-textarea">
+            <textarea id="giki-try-me-ta" cols="44" rows="10">
+
             </textarea>
         </div>    
     </div>
