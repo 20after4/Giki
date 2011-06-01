@@ -8,13 +8,19 @@ $('document').ready(
         //$('#giki-try-me-ta').val($('#giki-content').html());
     
     var giki = new Giki(
-        {
-            'div'       : 'giki-content',
-            'text_area' : 'giki-try-me-ta',
-            'parser'    : 'src/bbcode.js'
-        }
-    );
-    
+            {
+                'div'       : 'giki-content',
+                'text_area' : 'giki-try-me-ta',
+                'parser'    : 'src/bbcode.js'
+            }
+        ),
+        giki2 = new Giki(
+            {
+                'div'       : 'giki-try-me-div-2',
+                'text_area' : 'giki-try-me-ta-2',
+                'parser'    : 'src/bbcode.js'
+            }
+        );
     }
 );
         
