@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" type="text/css" href="css/giki-main.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/gworker.js"></script>
+  <script type="text/javascript" src="src/giki.js"></script>
+  <script type="text/javascript" src="javascript/main.js"></script>
+
+  <title>guyht/Giki @ GitHub</title>
+
+</head>
+
+<body>
+<div id="giki-header">
+    <img src="http://i.imgur.com/lPvmK.png" />
+</div>
+
+<div id="giki-main">
+    <div id="giki-content">    
+[b]Welcome to GIKI[/b]
+
+[b]GIKI[/b] is a simple, real time, asynchronous parsing framework that suppors a wide variety of parsers.  Currently, BBCode and wiki text are supported, and it is very easy to customize and create new parsers.
+
+The performance of the parsers is outstanding as they make use of webworkers via the [url=https://github.com/guyht/GWorker]GWorker[/url] library.
+
+[color=#FDD017]This text is parsed in real time.  If you would like to try it out for yourself, simply click on the try me button on the right hand side of the page and make some edits.  The edits will appear in real time. [/color]
+
+[b]Installation[/b]
+
+Simply add the following to your HEAD tag:
+
+[code]&lt;script src="giki.js" type="text/javascript"></script>[/code]
+
+If you would like the script to be compatible with older browsers that do not support web workers, then also download and add the [url=https://github.com/guyht/GWorker]gworker.js[/url] script to yoru HEAD tag.  This is recommended.
+
+[code]    &lt;script src="gworker.js" type="text/javascript"></script>[/code]
+
+NOTE: The gworker script must be included [i]before[/i] the giki script
+
+[b]Usage[/b]
+
+Add a text area to your page to receive input, and a div to receive the parsed data and make sure they have unique ids.
+
+[code]    &lt;div id="giki_div">&lt;/div>
+    &lt;textarea id="giki_ta">&lt;/textarea>
+[/code]
+
+Then simply invoke the giki object
+
+[code]    new Giki({
+     'div' : 'giki_div',
+     'text_area' : 'giki_ta',
+     'parser' : 'bbcode.js'
+    });[/code]
+
+Et voila!
+
+[b]Adding new parsers[/b]
+
+Giki is designed with extensibility in mind.  Writing new parsers is very simple.  New parsers are written as web workers (they will also work in older browsers thanks to [url=https://github.com/guyht/GWorker]gworker[/url]) and therefore only need to implement the onmessage function, and use the postMessage function to return the parsed data.
+
+[code]    self.onmessage = function(event) {
+     var data = event.data;
+     // ......
+     // Do some parsing
+     // .......
+     self.postMessage(data);
+    };[/code]
+    
+    </div>
+</div>
+
+<div id="giki-try-me">
+    <div id="giki-try-me-top"></div>
+    <div id="giki-try-me-body">
+        <div id="giki-try-me-body-textarea">
+            <textarea id="giki-try-me-ta" cols="44" rows="10">
+
+            </textarea>
+        </div>    
+    </div>
+</div>
+
+<a href="http://github.com/guyht/Giki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+
+  
+</body>
+</html>

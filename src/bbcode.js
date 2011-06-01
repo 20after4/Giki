@@ -276,3 +276,4 @@ function parseBBCode(post)
 
    return endtags ? result + endtags : result;
 }
+
