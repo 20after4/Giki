@@ -75,7 +75,7 @@ pre {
     margin-top: 62px;
 }
 
-#giki-content {
+#giki-content, #giki-sub-content {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
