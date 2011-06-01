@@ -11,7 +11,7 @@ a {
     font-weight: bold;
 }
 
-pre {
+pre, #giki-try-me-div-2 {
     padding: 20px;
     background-color: #191919;
     border-color: #F9F9B3;
@@ -75,7 +75,7 @@ pre {
     margin-top: 62px;
 }
 
-#giki-content {
+#giki-content, #giki-sub-content {
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
